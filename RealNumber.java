@@ -1,34 +1,51 @@
 
-public class RealNumber {
-	
-		private int x;
-		public RealNumber() {
-			this.x=0;
-		}
-		public RealNumber(int x) {
-			this.x=x;
-		}
-		public String toString() {
-			return ""+x;
-		}
-		public int getx() {
-			return this.x;
-		}
-		public int compareTo(RealNumber y) {
-			return this.x-y.getx();
-		}
-		public int add(RealNumber y) {
-			return this.x+y.getx();
-		}
-		public int substract(RealNumber y) {
-			return this.x-y.getx();
-		}
-		public int multiply(RealNumber y) {
-			return 1;//dummy value
-		}
-		public int divide(RealNumber y) {
-			return 1;//dummy value
-		}
+
+
+public class RealNumber{
+  private double value;
+
+  public RealNumber(double v){
+    value = v;
+  }
+
+  /*
+  *Return the sum of this and the other
+  */
+  public double add(RealNumber other){
+     //other can be ANY RealNumber, including a RationalNumber
+     //or other subclasses of RealNumber (that aren't written yet)
+     return this.value+other.getValue();
+  }
+
+  /*
+  *Return the product of this and the other
+  */
+  public double multiply(RealNumber other){
+    return this.value*other.getValue();
+  }
+
+  /*
+  *Return the this divided by the other
+  */
+  public double divide(RealNumber other){
+    return this.value/other.getValue();
+  }
+ 
+  /*
+  *Return the this minus the other
+  */
+  public double subtract(RealNumber other){
+    return this.value-other.getValue();
+  }
+
+
+  public double getValue(){
+    return this.value;
+  }
+
+  public String toString(){
+    return ""+value;
+  }
 
 }
 
