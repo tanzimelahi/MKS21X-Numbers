@@ -12,6 +12,7 @@ public class RationalNumber extends RealNumber{
 	   numerator=0;
 	   denominator=1;
    }
+   this.reduce();
   }
 
   public double getValue(){
@@ -50,6 +51,12 @@ public class RationalNumber extends RealNumber{
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
+	if(numerator==0) {
+		return"0";
+	}
+	else if (denominator==1){
+		return ""+numerator;
+	}
     return numerator+"/"+denominator;
   }
 
@@ -89,7 +96,7 @@ public class RationalNumber extends RealNumber{
           this.numerator=numerator/gcd(this.numerator,this.denominator);
          //System.out.println(this.numerator);
           this.denominator=this.denominator/gcd(dummy,this.denominator);
-          System.out.println(this.denominator);
+          //System.out.println(this.denominator);
 	      }
   }
   /******************Operations Return a new RationalNumber!!!!****************/
